@@ -40,3 +40,4 @@ def setup_app(request):
     driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
     driver.install_app(app)
     time.sleep(10)
+

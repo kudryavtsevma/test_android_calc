@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from appium import webdriver
 
@@ -5,6 +7,8 @@ from appium import webdriver
 def pytest_addoption(parser):
     parser.addoption('--android_version', action='store', default='10.0',
                      help="android_version")
+    parser.addoption('--apk', action='store', default=None,
+                     help="APK")
 
 
 @pytest.fixture(scope="module", autouse=True)
@@ -25,8 +29,8 @@ def driver(request):
 
 
 @pytest.fixture(scope="session", autouse=True)
-def setup_app():
-    app = r'C:\AndroidSDK\app-debug.apk'
+def setup_app(request):
+    app = request.config.getoption("apk")
     desired_caps = {
         'platformName': 'Android',
         'platformVersion': '10.0',
@@ -35,4 +39,4 @@ def setup_app():
     }
     driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
     driver.install_app(app)
-    driver.quit()
+    time.sleep(10)

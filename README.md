@@ -1,7 +1,9 @@
 # test_android_calc
 автотест appiup+python
 
-Перед запуском необходимо загрузить все библиотеки из requirements.txt
+Перед запуском необходимо загрузить все библиотеки из requirements.txt:
+
+pip install -r requirements.txt
 
 Для запуска из терминала:
 

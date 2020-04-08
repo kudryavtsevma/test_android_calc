@@ -50,13 +50,13 @@ class MainPage(BasePage):
         result_lst = self.driver.find_element(*MainPageLocators.RESULT).text.split(' = ')
         assert result_lst[1] == 'Infinity', 'Результат деления на 0 должен быть равен  "Infinity"'
 
-    def digit_response1(self):
-        self.send_(*MainPageLocators.FIRST_NUMBER, 1)
-        assert self.get_text_from_field1() != ' ', 'Поле 1 пустое после нажатия'
+    def digit_response1(self, num1):
+        self.send_(*MainPageLocators.FIRST_NUMBER, num1)
 
-    def digit_response2(self):
-        self.send_(*MainPageLocators.SECOND_NUMBER, 2)
-        assert self.get_text_from_field1() != ' ', 'Поле 2 пустое после нажатия'
+
+    def digit_response2(self, num2):
+        self.send_(*MainPageLocators.SECOND_NUMBER, num2)
+
 
     def reset_button(self):
         self.click_on_operation(*MainPageLocators.RESET_BUTTON)

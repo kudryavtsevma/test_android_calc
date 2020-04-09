@@ -57,7 +57,8 @@ def test_dif_0_9(driver,  num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_minus_button()
-    assert page.get_result() == float(num1) - float(num2), 'Результат вычитания  посчитан не верно'
+    Expected = float(num1) - float(num2)
+    assert page.get_result() == Expected, 'Результат вычитания  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [-9, 1])
@@ -68,7 +69,8 @@ def test_dif_negative(driver,  num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_minus_button()
-    assert page.get_result() == float(num1) - float(num2), 'Результат вычитания  посчитан не верно'
+    Expected = float(num1) - float(num2)
+    assert page.get_result() == Expected, 'Результат вычитания  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [6, 2])
@@ -79,7 +81,8 @@ def test_dif_overflow_and_positive(driver,  num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_minus_button()
-    assert page.get_result() == float(num1) - float(num2), 'Результат вычитания  посчитан не верно'
+    Expected = float(num1) - float(num2)
+    assert page.get_result() == Expected , 'Результат вычитания  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [0, 11])
@@ -90,7 +93,8 @@ def test_dif_many_numbers(driver,  num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_minus_button()
-    assert page.get_result() == float(num1) - float(num2), 'Результат вычитания  посчитан не верно'
+    Expected = float(num1) - float(num2)
+    assert page.get_result() == Expected, 'Результат вычитания  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [str(1.1), str(9.9), str(99.15), str(99.99), str(99.150), str(99.999)])
@@ -100,7 +104,8 @@ def test_dif_float(driver, num1, num2=1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_minus_button()
-    assert page.get_result() == float(num1) - float(num2), 'Результат вычитания  посчитан не верно'
+    Expected = float(num1) - float(num2)
+    assert page.get_result() == Expected, 'Результат вычитания  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [9, 0])
@@ -111,7 +116,8 @@ def test_sum_0_9(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_plus_button()
-    assert page.get_result() == float(num1) + float(num2), 'Результат сложения  посчитан не верно'
+    Expected = float(num1) + float(num2)
+    assert page.get_result() == Expected, 'Результат сложения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [-9, 1])
@@ -122,7 +128,8 @@ def test_sum_negative(driver,  num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_plus_button()
-    assert page.get_result() == float(num1) + float(num2), 'Результат сложения  посчитан не верно'
+    Expected = float(num1) + float(num2)
+    assert page.get_result() == Expected, 'Результат сложения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [6, 2])
@@ -133,7 +140,8 @@ def test_sum_overflow_and_positive(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_plus_button()
-    assert page.get_result() == float(num1) + float(num2), 'Результат сложения  посчитан не верно'
+    Expected = float(num1) + float(num2)
+    assert page.get_result() == Expected, 'Результат сложения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [9999999999, 11])
@@ -144,7 +152,8 @@ def test_sum_many_numbers(driver,  num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_plus_button()
-    assert page.get_result() == float(num1) + float(num2), 'Результат сложения  посчитан не верно'
+    Expected = float(num1) + float(num2)
+    assert page.get_result() == Expected, 'Результат сложения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [str(1.1), str(9.9), str(99.15), str(99.99), str(99.150), str(99.999)])
@@ -154,7 +163,8 @@ def test_sum_float(driver, num1, num2=1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_plus_button()
-    assert page.get_result() == float(num1) + float(num2), 'Результат сложения  посчитан не верно'
+    Expected = float(num1) + float(num2)
+    assert page.get_result() == Expected, 'Результат сложения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [6, 2])
@@ -165,7 +175,8 @@ def test_div_positive(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_div_button()
-    assert page.get_result() == float(num1) / float(num2), 'Результат деления  посчитан не верно'
+    Expected = float(num1) / float(num2)
+    assert page.get_result() == Expected, 'Результат деления  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [0, 11])
@@ -176,7 +187,8 @@ def test_div_many_numbers(driver, num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_div_button()
-    assert page.get_result() == float(num1) / float(num2), 'Результат деления  посчитан не верно'
+    Expected = float(num1) / float(num2)
+    assert page.get_result() == Expected, 'Результат деления  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [9, str(1.1), str(9.9), str(99.15), str(99.99), str(99.150), str(99.999)])
@@ -187,7 +199,8 @@ def test_div_float(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_div_button()
-    assert page.get_result() == float(num1) / float(num2), 'Результат деления  посчитан не верно'
+    Expected = float(num1) / float(num2)
+    assert page.get_result() == Expected, 'Результат деления  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [1, -9])
@@ -198,7 +211,8 @@ def test_div_negative(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_div_button()
-    assert page.get_result() == float(num1) / float(num2), 'Результат деления  посчитан не верно'
+    Expected = float(num1) / float(num2)
+    assert page.get_result() == Expected, 'Результат деления  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [9, -9])
@@ -219,7 +233,8 @@ def test_mult_positive(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_mult_button()
-    assert page.get_result() == float(num1) * float(num2), 'Результат умножения  посчитан не верно'
+    Expected = float(num1) * float(num2)
+    assert page.get_result() == Expected, 'Результат умножения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [0, 11])
@@ -230,7 +245,8 @@ def test_mult_many_numbers(driver, num2, num1):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_mult_button()
-    assert page.get_result() == float(num1) * float(num2), 'Результат умножения  посчитан не верно'
+    Expected = float(num1) * float(num2)
+    assert page.get_result() == Expected, 'Результат умножения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [9, str(1.1), str(9.9), str(99.15), str(99.99), str(99.150), str(99.999)])
@@ -241,7 +257,8 @@ def test_mult_float(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_mult_button()
-    assert page.get_result() == float(num1) * float(num2), 'Результат умножения  посчитан не верно'
+    Expected = float(num1) * float(num2)
+    assert page.get_result() == Expected, 'Результат умножения  посчитан не верно'
 
 
 @pytest.mark.parametrize('num1', [1, -9])
@@ -252,6 +269,7 @@ def test_mult_negative(driver, num1, num2):
     page.input_to_first_number(num1)
     page.input_to_second_number(num2)
     page.press_the_mult_button()
-    assert page.get_result() == float(num1) * float(num2), 'Результат умножения  посчитан не верно'
+    Expected = float(num1) * float(num2)
+    assert page.get_result() == Expected, 'Результат умножения  посчитан не верно'
 
 

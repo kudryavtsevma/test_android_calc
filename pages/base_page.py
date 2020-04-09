@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from .locators import MainPageLocators
+
 
 
 class BasePage:
@@ -19,16 +19,6 @@ class BasePage:
             return False
         return True
 
-    def get_text_from_field1(self):
-        text = self.driver.find_element(*MainPageLocators.FIRST_NUMBER).text
+    def get_text_from_element(self, how, what):
+        text = self.driver.find_element(how, what).text
         return text
-
-    def get_text_from_field2(self):
-        text = self.driver.find_element(*MainPageLocators.SECOND_NUMBER).text
-        return text
-
-    def field_selection_1(self):
-        self.driver.find_element(*MainPageLocators.FIRST_NUMBER).click()
-
-    def field_selection_2(self):
-        self.driver.find_element(*MainPageLocators.SECOND_NUMBER).click()
